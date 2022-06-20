@@ -8,29 +8,24 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.vn.entities.Role;
 import com.vn.entities.Users;
 
 public class CustomUserDetail implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	
 	Users users;
-	List<Role> roles;
 	
-	public CustomUserDetail(Users users, List<Role> roles) {
+	public CustomUserDetail(Users users) {
 		super();
 		this.users = users;
-		this.roles = roles;
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		
-		roles.forEach(x -> {
-			SimpleGrantedAuthority authority = new SimpleGrantedAuthority(x.getName());
-			authorities.add(authority);
-		});
+		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(users.getRole());
+		authorities.add(authority);
 		
 		return authorities;
 	}
@@ -62,15 +57,11 @@ public class CustomUserDetail implements UserDetails {
 
 	@Override
 	public boolean isEnabled() {
-		return users.getActive();
+		return true;
 	}
 
 	public Users getUsers() {
 		return users;
-	}
-
-	public List<Role> getRoles() {
-		return roles;
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.vn.MockProjectWeb.employee;
+package com.vn.exception;
 
 public class EmployeeNotFoundException extends Throwable {
 

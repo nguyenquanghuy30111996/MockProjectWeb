@@ -1,4 +1,4 @@
-package com.vn.MockProjectWeb.member;
+package com.vn.controller;
 
 import java.util.List;
 
@@ -15,14 +15,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.vn.entities.Users;
+import com.vn.service.UserService;
+
 @Controller
 public class MemberController {
 
 	@Autowired
-	MemberService service;
+	UserService memberService;
 
 	@GetMapping(value = "member/login")
-	public ModelAndView getLoginUI(Member member, Model model) {
+	public ModelAndView getLoginUI(Users member, Model model) {
 		ModelAndView m = new ModelAndView();
 		m.setViewName("member/memberLogin");
 		model.addAttribute("member", member);
@@ -32,21 +35,21 @@ public class MemberController {
 
 	@GetMapping(value = "member/register")
 	public String getRegisterUI(Model model) {
-		model.addAttribute("member", new Member());
+		model.addAttribute("member", new Users());
 		return "member/memberRegister";
 	}
 
 	@PostMapping(value = "member/register")
-	public String registerMember(@ModelAttribute("member") @Valid Member member, BindingResult bindingResult,
+	public String registerUsers(@ModelAttribute("member") @Valid Users member, BindingResult bindingResult,
 			Model model, RedirectAttributes redirectAttributes) {
 		// check username unique
-		Member username = service.checkUsername(member.getUsername());
+		Users username = memberService.checkUsername(member.getUsername());
 		if (username != null) {
 			bindingResult.rejectValue("username", "member", "Username is already exists !");
 
 		}
 		// check email unique
-		Member email = service.checkEmail(member.getEmail());
+		Users email = memberService.checkEmail(member.getEmail());
 		if (email != null) {
 			bindingResult.rejectValue("email", "member", "Email is already exists !");
 		}
@@ -65,68 +68,36 @@ public class MemberController {
 		} else {
 		}
 		{
-			service.saveMember(member);
+			memberService.saveUsers(member);
 			redirectAttributes.addFlashAttribute("message", "Register sucessfully !");
 		}
 		return "redirect:/member/login";
 
 	}
-
-	@PostMapping(value = "member/login")
-	public String login(@ModelAttribute("member")@Valid  Member member , BindingResult bindingResult ,Model model , RedirectAttributes attributes) {
-		//checkLogin
-		String username = member.getUsername();
-		String password = member.getPassword();
-		if("".equals(username) || username == null ) {
-			bindingResult.rejectValue("username", "member", "The required fields are not null !");
-		}
-		if("".equals(password) || password == null ) {
-			bindingResult.rejectValue("password", "member", "The required fields are not null !");
-		}
-		Member username1 = service.checkUsername(member.getUsername());
-		Member password1 = service.checkPassword(member.getPassword());
-		if(username1 == null || password1 == null) {
-			bindingResult.rejectValue("password", "memeber", "Username / password is invalid. Please try again !");
-			
-		}else {
-			return "redirect:/index";
-		}
-				
-			
-		
-		
-	   if(bindingResult.hasErrors()) {
-		   return "member/memberLogin";
-	   }
-		
 	
-		return "redirect:/index";
-		
-	}
 	@GetMapping(value = "index")
-	public String showHomePage(Model model, Member member) {
+	public String showHomePage(Model model, Users member) {
 		model.addAttribute("member", member);
 		return "index";
-		
 	}
 	
 	@GetMapping(value = "member/list")
-	public String getAllMember(Model model) {
-		List<Member> members = service.findAll();
+	public String getAllUsers(Model model) {
+		List<Users> members = memberService.findAll();
 		model.addAttribute("member",members);
 		return "member/memberList";
 		
 	}
 	@GetMapping(value = "member/edit")
-	public String getEditMemberUI(@RequestParam("id")Integer id , Model model) {
-	     Member member = (Member) service.findAllById(id);
+	public String getEditUsersUI(@RequestParam("id")Integer id , Model model) {
+	     Users member = (Users) memberService.findById(id);
 	     model.addAttribute("member", member);
 		return "member/memberEdit";
 		
 	}
 	@PostMapping(value = "member/edit")
-	public String editMember(Model model,Member member,RedirectAttributes attributes) {
-		service.update(member);
+	public String editUsers(Model model,Users member,RedirectAttributes attributes) {
+		memberService.update(member);
 		attributes.addFlashAttribute("message", "Update information successfully !");
 		return "redirect:/member/list";
 		

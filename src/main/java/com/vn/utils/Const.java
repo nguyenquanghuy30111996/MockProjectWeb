@@ -6,6 +6,12 @@ public class Const {
 		public final static Integer SIZE_DEFAULT = 10;
 		public final static String PAGE_DEFAULT_STR = "1";
 		public final static String SIZE_DEFAULT_STR = "10";
+		
+		
 	}
+	
+	public final static String ROLE_ADMIN = "ADMIN";
+	public final static String ROLE_MEMBER = "MEMBER";
+	public final static String ROLE_EMPLOYEE = "EMPLOYEE";
 
 }

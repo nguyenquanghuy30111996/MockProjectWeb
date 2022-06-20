@@ -5,59 +5,78 @@
 
 <tiles-definitions>
 	<!-- Base Define user -->
-	<definition name="base.definition" template="/WEB-INF/views/common/classic.jsp">
+	<definition name="base.definition"
+		template="/WEB-INF/views/common/classic.jsp">
 		<put-attribute name="title" value="" />
-		<put-attribute name="header" value="/WEB-INF/views/common/_header.jsp" />
-		<put-attribute name="menu" value="/WEB-INF/views/common/_menu.jsp" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/_header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/common/_menu.jsp" />
 		<put-attribute name="body" value="" />
-		<put-attribute name="footer" value="/WEB-INF/views/common/_footer.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/_footer.jsp" />
 	</definition>
-	
+
 	<definition name="home" extends="base.definition">
 		<put-attribute name="title" value="Home Page" />
-		<put-attribute name="body" value="/WEB-INF/views/index.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/index.jsp" />
 	</definition>
-	
+
 	<!-- Base Define non user -->
-	<definition name="none.definition" template="/WEB-INF/views/common/non_classic.jsp">
+	<definition name="none.definition"
+		template="/WEB-INF/views/common/non_classic.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="body" value="" />
 	</definition>
-	
-	
+
+
 	<definition name="login" extends="none.definition">
 		<put-attribute name="title" value="Login Form" />
-		<put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/login.jsp" />
 	</definition>
-	
-	
+
+
 	<!-- Base Define Admin -->
-	<definition name="base.admin.definition" template="/WEB-INF/views/common/classic_admin.jsp">
+	<definition name="base.admin.definition"
+		template="/WEB-INF/views/common/classic_admin.jsp">
 		<put-attribute name="title" value="" />
-		<put-attribute name="header" value="/WEB-INF/views/common/_header_admin.jsp" />
-		<put-attribute name="menu" value="/WEB-INF/views/common/_menu_admin.jsp" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/common/_header_admin.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/common/_menu_admin.jsp" />
 		<put-attribute name="body" value="" />
-		<put-attribute name="footer" value="/WEB-INF/views/common/_footer_admin.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/common/_footer_admin.jsp" />
 	</definition>
 
-	<definition name="admin_home" extends="base.admin.definition">
+	<definition name="admin_home"
+		extends="base.admin.definition">
 		<put-attribute name="title" value="Admin Home" />
-		<put-attribute name="body" value="/WEB-INF/views/admin/dashboard.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/dashboard.jsp" />
 	</definition>
-	
-	<definition name="admin_movie_list" extends="base.admin.definition">
+
+	<definition name="admin_movie_list"
+		extends="base.admin.definition">
 		<put-attribute name="title" value="Movie list" />
-		<put-attribute name="body" value="/WEB-INF/views/admin/movie/list_movie.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/movie/list_movie.jsp" />
 	</definition>
 
-<definition name="admin_movie_edit" extends="base.admin.definition">
+	<definition name="admin_movie_edit"
+		extends="base.admin.definition">
 		<put-attribute name="title" value="Movie Edit" />
-		<put-attribute name="body" value="/WEB-INF/views/admin/movie/edit_movie.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/movie/edit_movie.jsp" />
 	</definition>
 
-<definition name="admin_cinema_room_list" extends="base.admin.definition">
+	<definition name="admin_cinema_room_list"
+		extends="base.admin.definition">
 		<put-attribute name="title" value="Cinema Room list" />
-		<put-attribute name="body" value="/WEB-INF/views/admin/cinemaRoom/cinema_room_list.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/cinemaRoom/cinema_room_list.jsp" />
 	</definition>
 
 </tiles-definitions>

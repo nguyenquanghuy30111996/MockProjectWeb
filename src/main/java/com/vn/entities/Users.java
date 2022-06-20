@@ -1,36 +1,80 @@
 package com.vn.entities;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Users implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@Column(name = "first_name")
 	private String firstName;
-	
+
 	@Column(name = "last_name")
 	private String lastName;
 
+	@Column(name = "username", unique = true)
+	@NotBlank(message = "Username must be not blank !")
+	@Size(min = 6, max = 15, message = "Username length must be between 6 and 15")
+	@NotNull
 	private String username;
-	private String email;
+
+	@NotNull
+	@Size(min = 6, message = "Password must be at least 6 characters !")
+	@NotBlank(message = "Password must be not blank !")
 	private String password;
-	private Boolean active;
-	
-	@OneToMany(mappedBy = "users", fetch = FetchType.EAGER)
-	private List<UserRole> userRoles;
+
+	@NotNull
+	@NotBlank(message = "Confirm password must be not blank !")
+	@Column(name = "re_password")
+	private String rePassword;
+
+	@NotNull
+	@NotBlank(message = "Full name must be not blank !")
+	private String fullName;
+
+	@NotNull
+	@NotBlank(message = "Date of birth must be not blank !")
+	private String dateOfBirth;
+
+	@NotNull(message = "Gender must be not null !")
+	private String gender;
+
+	@Email(message = "Email is invalid , please enter email correct !")
+	@NotBlank(message = "Email must be not blank !")
+	private String email;
+
+	@NotNull
+	@NotBlank(message = "Identity card must be not blank !")
+	private String identityCard;
+
+	@NotNull
+	@NotBlank(message = "Phone number must be not blank !")
+	private String phoneNumber;
+
+	@NotNull
+	@NotBlank(message = "Address must be not blank !")
+	private String address;
+
+	@NotNull
+	@NotBlank(message = "Register date must be not blank !")
+	private String registerDate;
+
+	//ADMIN, MEMBER, EMPLOYEE
+	private String role;
 
 	public Integer getId() {
 		return id;
@@ -64,22 +108,6 @@ public class Users implements Serializable {
 		this.password = password;
 	}
 
-	public List<UserRole> getUserRoles() {
-		return userRoles;
-	}
-
-	public void setUserRoles(List<UserRole> userRoles) {
-		this.userRoles = userRoles;
-	}
-
-	public Boolean getActive() {
-		return active;
-	}
-
-	public void setActive(Boolean active) {
-		this.active = active;
-	}
-
 	public String getFirstName() {
 		return firstName;
 	}
@@ -95,4 +123,77 @@ public class Users implements Serializable {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
+	public String getRePassword() {
+		return rePassword;
+	}
+
+	public void setRePassword(String rePassword) {
+		this.rePassword = rePassword;
+	}
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getIdentityCard() {
+		return identityCard;
+	}
+
+	public void setIdentityCard(String identityCard) {
+		this.identityCard = identityCard;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getRegisterDate() {
+		return registerDate;
+	}
+
+	public void setRegisterDate(String registerDate) {
+		this.registerDate = registerDate;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 }

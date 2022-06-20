@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-=======
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
->>>>>>> c3d6d49 (add code giang)
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.0</version>
-<<<<<<< HEAD
-		<relativePath/> <!-- lookup parent from repository -->
-=======
 		<relativePath /> <!-- lookup parent from repository -->
->>>>>>> c3d6d49 (add code giang)
 	</parent>
 	<groupId>com.vn</groupId>
 	<artifactId>MockProjectWeb</artifactId>
@@ -59,7 +50,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<<<<<<< HEAD
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
@@ -69,29 +59,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 		</dependency>
-=======
-<<<<<<< HEAD
->>>>>>> daa6e20f66ab7f8baa7e77072f47d4f2254b9b3b
-		<dependency> 
-		    <groupId>org.springframework.boot</groupId> 
-		    <artifactId>spring-boot-starter-validation</artifactId> 
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
 		</dependency>
 		<dependency>
-			 <groupId>javax.servlet</groupId>
-			 <artifactId>jstl</artifactId>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			 <groupId>org.apache.tomcat.embed</groupId>
-			 <artifactId>tomcat-embed-jasper</artifactId>
-			 <scope>provided</scope>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>4.0.0</version>
 		</dependency>
-		<dependency>
-			 <groupId>org.webjars</groupId>
-			 <artifactId>bootstrap</artifactId>
-			 <version>4.0.0</version>
-		</dependency>
-<<<<<<< HEAD
-		<!-- Tiles API -->
 		<!-- http://mvnrepository.com/artifact/org.apache.tiles/tiles-api%20 -->
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
@@ -128,9 +109,6 @@
 			<artifactId>tiles-request-api</artifactId>
 			<version>1.0.6</version>
 		</dependency>
-=======
-=======
-
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -141,28 +119,22 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
-		
-		
-		
-		<dependency>
-	      <groupId>org.passay</groupId>
-	      <artifactId>passay</artifactId>
-	      <version>1.6.0</version>
-	  </dependency>
-		
-		<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-validation</artifactId>  
-</dependency>
 
+		<dependency>
+			<groupId>org.passay</groupId>
+			<artifactId>passay</artifactId>
+			<version>1.6.0</version>
+		</dependency>
 
->>>>>>> c3d6d49 (add code giang)
->>>>>>> daa6e20f66ab7f8baa7e77072f47d4f2254b9b3b
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -181,13 +153,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-<<<<<<< HEAD
 </project>
-=======
-<<<<<<< HEAD
-</project>
-=======
-</project>
->>>>>>> c3d6d49 (add code giang)
->>>>>>> daa6e20f66ab7f8baa7e77072f47d4f2254b9b3b

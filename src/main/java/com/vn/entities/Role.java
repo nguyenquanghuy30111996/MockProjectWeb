@@ -1,40 +1,53 @@
 package com.vn.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
-
-
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 @Entity
-@Table(name = "ROLE")
-public class Role {
+public class Role implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue
-	@Column(name = "ROLE_ID")
-	private Integer roleId;
-	
-	@Column(name = "ROLE_NAME", nullable = false)
-	
-	private String roleName;
-	
-	@OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
-	private List<AccountRole> accountRoles;
+	private Integer id;
+
+	private String name;
+
+	@OneToMany(mappedBy = "role")
+	private List<UserRole> userRoles;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<UserRole> getUserRoles() {
+		return userRoles;
+	}
+
+	public void setUserRoles(List<UserRole> userRoles) {
+		this.userRoles = userRoles;
+	}
+
+	@Override
+	public String toString() {
+		return "Role [id=" + id + ", name=" + name + "]";
+	}
+
 }

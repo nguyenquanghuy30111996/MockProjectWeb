@@ -86,9 +86,13 @@
                 <a class="collapse-item" href="register.html">Register</a>
                 <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                 <div class="collapse-divider"></div>
-                <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a>
+                <h6 class="collapse-header">Movie management:</h6>
+                <a class="collapse-item" href="/movie">Display list of movie</a>
+                <a class="collapse-item" href="blank.html">Add Movie</a>
+                <div class="collapse-divider"></div>
+                <h6 class="collapse-header">Cinema room management:</h6>
+                <a class="collapse-item" href="/listCinemaRoom">Display list of cinema room</a>
+                <a class="collapse-item" href="/add_new_cinema_room">Add cinema room</a>
             </div>
         </div>
     </li>

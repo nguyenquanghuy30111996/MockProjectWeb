@@ -32,5 +32,5 @@ public class AccountRole {
 	@ManyToOne
 	@MapsId("roleId")
 	@JoinColumn(name="ROLE_ID")
-	private Role role;
+	private RoleTemp role;
 }

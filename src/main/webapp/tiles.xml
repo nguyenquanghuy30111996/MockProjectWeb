@@ -44,5 +44,20 @@
 		<put-attribute name="title" value="Admin Home" />
 		<put-attribute name="body" value="/WEB-INF/views/admin/dashboard.jsp" />
 	</definition>
+	
+	<definition name="admin_movie_list" extends="base.admin.definition">
+		<put-attribute name="title" value="Movie list" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/movie/list_movie.jsp" />
+	</definition>
+
+<definition name="admin_movie_edit" extends="base.admin.definition">
+		<put-attribute name="title" value="Movie Edit" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/movie/edit_movie.jsp" />
+	</definition>
+
+<definition name="admin_cinema_room_list" extends="base.admin.definition">
+		<put-attribute name="title" value="Cinema Room list" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/cinemaRoom/cinema_room_list.jsp" />
+	</definition>
 
 </tiles-definitions>

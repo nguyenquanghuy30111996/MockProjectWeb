@@ -10,8 +10,12 @@ import com.vn.entities.CinemaRoom;
 
 public interface CinemaRoomService {
 	
-public List<CinemaRoom> getAllCinemaRooms();
+	public List<CinemaRoom> getAllCinemaRooms();
 	
 	public Page<CinemaRoom> getPageCinemaRooms(Integer pageIndex, Integer pageSize);
+	
+	public void saveCinemaRoom(CinemaRoom cinemaRoom);
+
+	public List<CinemaRoom> getAllCinemaRoomsByKeyword(String keyword);
 
 }

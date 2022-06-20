@@ -1,65 +1,41 @@
-package com.vn.entities;
+package com.vn.models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-@Entity
-public class Movie {
+public class MovieDTO implements Serializable{
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "movie_id")
+	private static final long serialVersionUID = 1L;
+
 	private Integer id;
 
-	@Column(length = 255, nullable = false)
 	private String actor;
 
-	@Column(length = 1000, nullable = false)
 	private String content;
 
-	@Column(length = 255, nullable = false)
 	private String director;
 
-	@Column(nullable = false)
 	private Integer duration;
 
 	@JsonFormat(pattern = "dd-MM-yyyy")
-	@Column(name = "from_date", nullable = false)
 	private LocalDate fromDate;
 
 	@JsonFormat(pattern = "dd-MM-yyyy")
-	@Column(name = "to_date", nullable = false)
 	private LocalDate toDate;
 
-	@Column(name = "movie_production_company", length = 255, nullable = false)
 	private String movieProductionCompany;
 
-	@Column(length = 255, nullable = false)
 	private String version;
 
-	@Column(name = "movie_name_english", length = 255, nullable = false)
 	private String movieNameEnglish;
 
-	@Column(name = "movie_name_vn", length = 255, nullable = false)
 	private String movieNameVN;
 
-	@Column(name = "large_image", length = 255, nullable = false)
 	private String largeImage;
 
-	@Column(name = "small_image", length = 255, nullable = false)
 	private String smallImage;
-
-	@OneToMany(mappedBy = "movie")
-	private List<Movie_Type> moTypes;
 
 	public Integer getId() {
 		return id;
@@ -101,16 +77,9 @@ public class Movie {
 		this.duration = duration;
 	}
 
-	public LocalDate getFromDate() {
-		return fromDate;
-	}
 
 	public void setFromDate(LocalDate fromDate) {
 		this.fromDate = fromDate;
-	}
-
-	public LocalDate getToDate() {
-		return toDate;
 	}
 
 	public void setToDate(LocalDate toDate) {
@@ -163,14 +132,6 @@ public class Movie {
 
 	public void setSmallImage(String smallImage) {
 		this.smallImage = smallImage;
-	}
-
-	public List<Movie_Type> getMoTypes() {
-		return moTypes;
-	}
-
-	public void setMoTypes(List<Movie_Type> moTypes) {
-		this.moTypes = moTypes;
 	}
 
 }

@@ -26,8 +26,21 @@ public class CinemaRoomServiceImpl implements CinemaRoomService{
 
 	@Override
 	public Page<CinemaRoom> getPageCinemaRooms(Integer pageIndex, Integer pageSize) {
-		Pageable pageable = PageRequest.of(pageIndex, pageSize);
+		Pageable pageable = PageRequest.of(pageIndex-1, pageSize);
 		return cinemaRoomRepository.findAll(pageable);
+	}
+
+	@Override
+	public void saveCinemaRoom(CinemaRoom cinemaRoom) {
+		cinemaRoomRepository.save(cinemaRoom);
+	}
+
+	@Override
+	public List<CinemaRoom> getAllCinemaRoomsByKeyword(String keyword) {
+		if(keyword!=null) {
+			cinemaRoomRepository.search(keyword);
+		}
+		return cinemaRoomRepository.findAll();
 	}
 
 }

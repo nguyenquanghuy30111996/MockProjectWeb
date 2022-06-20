@@ -1,0 +1,50 @@
+@charset "ISO-8859-1";
+span{
+	display:block;
+}
+strong{
+	color:red;
+}
+.form1 input{
+	width:98%;
+	height:25px;
+	margin-top:2px;
+}
+.form1{
+	margin-top:10px;
+}
+.file{
+	border:1px solid #767676;
+	padding:1.5px;
+	
+}
+.btn-add{
+	background-color:#337AB7;
+	color:white;
+	text-decoration:none;
+	padding:10px;
+	
+	
+}
+.add{
+	margin-top:20px;
+	
+
+}
+.form2 input{
+	margin-top:10px;
+	margin-left:-1px;
+}
+.form2{
+	margin-top:10px;
+}
+.disabled {
+	background-color:#EEEEEE;
+}
+h3{
+	text-align:center;
+	border-bottom: 0.5px solid #F2F2F2;
+	display: block;
+	margin-top:-2px;
+	height:3pc;
+}

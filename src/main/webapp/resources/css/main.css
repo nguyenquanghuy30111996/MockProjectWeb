@@ -1,0 +1,76 @@
+@charset "ISO-8859-1";
+
+h3, td ,th,tr{
+	text-align: center;
+}
+.btn {
+	background-color: #337AB7;
+	color: white;
+	border: 5px solid #337AB7;
+	height: 1.7pc;
+	width: 6pc;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.search {
+	margin-left: 82pc;
+}
+
+.search input {
+	height: 1.7pc;
+	width: 10pc;
+	border: 1px solid #F2F2F2;
+}
+
+th, td, tr{
+	padding-left: 2pc;
+	font-size:100%;
+	max-width:100%;
+
+	
+	
+}
+
+table {
+	margin-top: 5px;
+  width: 100%;
+  border:5px solid;
+  
+
+
+}
+
+.header {
+	border-bottom: 0.5px solid #F2F2F2;
+	display: block
+}
+
+.btn-add {
+	background-color: #337AB7;
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+
+}
+
+.add {
+	margin-top: 20px;
+	margin-left: 20px;
+
+}
+.delete{
+	color:red;
+}
+.error{
+	color:red;
+}
+#data {  
+  font-family: Arial, Helvetica, sans-serif;  
+  border-collapse: collapse;  
+  width: 100%;  
+}
+.active{
+	text-align:center;
+}
+

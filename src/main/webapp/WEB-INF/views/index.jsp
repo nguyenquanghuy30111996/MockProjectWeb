@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<<<<<<< HEAD
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
  <!-- Begin Page Content -->
@@ -332,3 +333,16 @@
 
 </div>
 <!-- /.container-fluid -->
+=======
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home page</title>
+</head>
+<body>
+<h1>Home Page</h1>
+<h3>Hello  ${member.fullName}</h3> 
+</body>
+</html>
+>>>>>>> daa6e20f66ab7f8baa7e77072f47d4f2254b9b3b
